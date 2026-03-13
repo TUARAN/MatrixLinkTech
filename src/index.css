@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #030712;
+  --color-surface: #020617;
+  --color-accent-500: #22d3ee;
+  --color-accent-600: #06b6d4;
+  --shadow-soft-glass: 0 18px 60px rgba(15, 23, 42, 0.9);
+  --font-sans: system-ui, "SF Pro Text", Inter, ui-sans-serif, sans-serif;
+  --radius-xl: 1.1rem;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-background text-slate-100 antialiased;
+}
+
+.app-shell {
+  @apply relative min-h-screen flex flex-col text-slate-100 isolate overflow-hidden;
+  background:
+    radial-gradient(circle at 20% 12%, rgba(56, 189, 248, 0.1), transparent 24%),
+    radial-gradient(circle at 82% 18%, rgba(129, 140, 248, 0.12), transparent 22%),
+    radial-gradient(circle at 52% 78%, rgba(34, 211, 238, 0.07), transparent 26%),
+    linear-gradient(180deg, #020617 0%, #050b18 48%, #020617 100%);
+}
+
+.app-shell::before {
+  content: "";
+  position: fixed;
+  inset: -6%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.82;
+  will-change: transform;
+  background-image:
+    radial-gradient(145% 110% at 0% 20%, transparent 56%, rgba(56, 189, 248, 0.085) 57%, transparent 58%),
+    radial-gradient(120% 95% at 100% 12%, transparent 54%, rgba(129, 140, 248, 0.095) 55%, transparent 56%),
+    radial-gradient(130% 92% at 78% 76%, transparent 58%, rgba(167, 139, 250, 0.085) 59%, transparent 60%),
+    linear-gradient(112deg, transparent 0%, transparent 47%, rgba(96, 165, 250, 0.16) 50%, transparent 53%, transparent 100%),
+    linear-gradient(136deg, transparent 0%, transparent 47%, rgba(34, 211, 238, 0.14) 50%, transparent 53%, transparent 100%),
+    radial-gradient(circle at 18% 28%, rgba(125, 211, 252, 0.34) 0 1.2px, transparent 2.4px),
+    radial-gradient(circle at 42% 18%, rgba(165, 180, 252, 0.3) 0 1.2px, transparent 2.4px),
+    radial-gradient(circle at 74% 22%, rgba(167, 139, 250, 0.34) 0 1.2px, transparent 2.4px),
+    radial-gradient(circle at 38% 84%, rgba(125, 211, 252, 0.28) 0 1.1px, transparent 2.2px),
+    radial-gradient(circle at 84% 66%, rgba(56, 189, 248, 0.28) 0 1px, transparent 2px);
+  background-size:
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    190% 190%,
+    190% 190%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+  background-position:
+    center,
+    center,
+    center,
+    0 0,
+    0 0,
+    center,
+    center,
+    center,
+    center,
+    center;
+  animation: matrix-network-drift 34s ease-in-out infinite alternate;
+}
+
+.app-shell::after {
+  content: "";
+  position: fixed;
+  inset: -6%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.46;
+  will-change: transform, opacity;
+  background-image:
+    linear-gradient(112deg, transparent 0%, transparent 49.15%, rgba(186, 230, 253, 0.28) 50%, transparent 50.85%, transparent 100%),
+    linear-gradient(72deg, transparent 0%, transparent 49.2%, rgba(196, 181, 253, 0.24) 50%, transparent 50.8%, transparent 100%),
+    radial-gradient(circle at 18% 28%, rgba(186, 230, 253, 0.22) 0 2px, transparent 6px),
+    radial-gradient(circle at 62% 26%, rgba(103, 232, 249, 0.2) 0 2.2px, transparent 7px);
+  background-size: 240px 240px, 280px 280px, 100% 100%, 100% 100%;
+  background-position: 0 0, 0 0, center, center;
+  animation: matrix-pulse-drift 14s ease-in-out infinite;
+}
+
+.app-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
+.bg-grid {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(148, 163, 184, 0.09) 1px,
+    transparent 0
+  );
+  background-size: 24px 24px;
+}
+
+@keyframes matrix-network-drift {
+  0% {
+    transform: translate3d(-0.6%, 0.4%, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(3.4%, -2.8%, 0) scale(1.025);
+  }
+}
+
+@keyframes matrix-pulse-drift {
+  0% {
+    opacity: 0.24;
+    transform: translate3d(0, 0, 0) scale(0.995);
+  }
+  50% {
+    opacity: 0.58;
+    transform: translate3d(1.8%, -1.3%, 0) scale(1.015);
+  }
+  100% {
+    opacity: 0.24;
+    transform: translate3d(3%, -2.1%, 0) scale(1);
+  }
+}
+
+@keyframes contact-blink {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(74, 222, 128, 0.95);
+  }
+  50% {
+    opacity: 0.18;
+    transform: scale(0.8);
+    box-shadow: 0 0 4px rgba(74, 222, 128, 0.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-shell::before,
+  .app-shell::after,
+  .contact-indicator {
+    animation: none;
+  }
+}
+
+.glass-card {
+  @apply bg-slate-900/35 border border-white/10 backdrop-blur-xl rounded-xl shadow-soft-glass;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-sky-400 to-indigo-400;
+}
+
+.badge-soft {
+  @apply inline-flex items-center rounded-full border border-white/10 bg-slate-900/45 px-3 py-1 text-xs font-medium text-slate-300 backdrop-blur-xl;
+}
+
+.contact-indicator {
+  display: inline-block;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 9999px;
+  background: rgba(74, 222, 128, 0.95);
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.9);
+  animation: contact-blink 0.85s steps(2, end) infinite;
+}
+
+.section {
+  @apply relative py-16 sm:py-20 border-t border-slate-800/70;
+}
+
+.container-main {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+
+.nav-link {
+  @apply text-sm font-medium text-slate-300 hover:text-white transition-colors;
+}
+
+.nav-link-active {
+  @apply text-sm font-semibold text-white;
+}
+
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950;
+}
