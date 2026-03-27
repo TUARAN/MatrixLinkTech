@@ -24,7 +24,7 @@ export function Navbar() {
                 MatrixLinkTech
               </div>
               <div className="text-[11px] text-slate-400">
-                广州矩联科技有限公司 · 开发者生态 · 创作者网络
+                矩阵联合 科创技联 传播技术 相信价值
               </div>
             </div>
           </div>

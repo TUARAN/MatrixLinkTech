@@ -8,7 +8,7 @@ export function Footer() {
               广州矩联科技有限公司 / MatrixLinkTech
             </div>
             <div className="mt-1 text-xs text-slate-500">
-              广州矩联科技有限公司官网 · 构建 AI 时代的开发者网络
+              矩阵联合 科创技联 传播技术 相信价值
             </div>
             <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
               <span>统一社会信用代码：91440106MAK565BF7N</span>
@@ -71,4 +71,3 @@ export function Footer() {
     </footer>
   );
 }
-

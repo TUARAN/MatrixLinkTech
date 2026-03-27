@@ -32,39 +32,40 @@ export function HomePage() {
             <div className="space-y-7 lg:pr-4">
               <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-gradient-to-r from-white/10 via-slate-900/80 to-cyan-500/10 px-5 py-2.5 text-sm font-medium text-slate-100 shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_20px_50px_rgba(8,15,30,0.45)] sm:text-base">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(74,222,128,0.9)]" />
-                广州矩联科技有限公司 · 开发者生态 · 创作者网络
+                广州矩联科技有限公司 · AI 生态连接者
               </div>
               <div className="space-y-3">
                 <div className="text-xs font-medium uppercase tracking-[0.38em] text-slate-500">
                   MATRIXLINKTECH / GUANGZHOU
                 </div>
                 <h1 className="text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-50 sm:text-5xl lg:text-6xl xl:text-[4.25rem]">
-                  <span className="block">
+                  <span className="block whitespace-nowrap text-[0.9em] sm:text-[1em]">
                     <span className="text-rose-400 drop-shadow-[0_0_22px_rgba(251,113,133,0.35)]">
                       矩
                     </span>
-                    <span className="gradient-text">阵</span>
+                    <span className="text-slate-50">阵</span>
                     <span className="text-rose-400 drop-shadow-[0_0_22px_rgba(251,113,133,0.35)]">
                       联
                     </span>
-                    <span className="gradient-text">合</span>
-                  </span>
-                  <span className="mt-2 block">
+                    <span className="mr-[0.28em] text-slate-50 sm:mr-[0.34em]">合</span>
                     <span className="text-rose-400 drop-shadow-[0_0_22px_rgba(251,113,133,0.35)]">
                       科
                     </span>
-                    <span className="gradient-text">创</span>
+                    <span className="text-slate-50">创</span>
                     <span className="text-rose-400 drop-shadow-[0_0_22px_rgba(251,113,133,0.35)]">
                       技
                     </span>
-                    <span className="gradient-text">联</span>
+                    <span className="text-slate-50">联</span>
+                  </span>
+                  <span className="mt-2 block text-2xl font-medium tracking-[0.2em] text-slate-200 sm:text-3xl lg:text-4xl">
+                    “传播技术 相信价值”
                   </span>
                 </h1>
                 <div className="h-px w-28 bg-gradient-to-r from-rose-400 via-cyan-400 to-transparent" />
               </div>
               <p className="max-w-2xl text-pretty text-sm leading-7 text-slate-300 sm:text-base sm:leading-8">
-                这里是广州矩联科技有限公司官方网站。我们专注于 AI + 开发者生态，通过技术内容矩阵、创作者网络与 AI 工具，构建面向中文开发者的协作网络。
-                让开发者、技术创作者与 AI 工具在同一张技术矩阵中高效连接、协作与成长。
+                我们专注于 AI + 开发者生态，通过技术内容矩阵、创作者网络与 AI 工具，
+                构建面向开发者和 AI 用户的共生网络。
               </p>
               <div className="flex flex-wrap gap-3">
                 <a
@@ -433,4 +434,3 @@ export function HomePage() {
     </main>
   );
 }
-
