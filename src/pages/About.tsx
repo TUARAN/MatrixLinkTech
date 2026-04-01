@@ -8,7 +8,7 @@ export function AboutPage() {
             <h1 className="text-2xl sm:text-3xl font-semibold text-slate-50">
               从技术矩阵到创作者网络
             </h1>
-            <p className="text-sm sm:text-base text-slate-300">
+            <p className="text-sm text-slate-300 whitespace-nowrap sm:text-base">
               广州矩联科技有限公司是一家专注 AI + 开发者生态的技术品牌，通过技术矩阵与创作者网络，组织起一张面向 LLM 时代的开发者协作网络。
             </p>
           </div>
@@ -147,4 +147,3 @@ export function AboutPage() {
     </main>
   );
 }
-

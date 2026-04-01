@@ -65,7 +65,21 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-4 border-t border-slate-800/70 pt-4 text-xs text-slate-600">
-          © {new Date().getFullYear()} 广州矩联科技有限公司（MatrixLinkTech）. 保留所有权利。
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <span>© {new Date().getFullYear()} 广州矩联科技有限公司（MatrixLinkTech）. 保留所有权利。</span>
+            <span
+              id="busuanzi_container_site_pv"
+              className="inline-flex items-center"
+            >
+              总访问量 <span id="busuanzi_value_site_pv" className="mx-1 text-slate-400" /> 次
+            </span>
+            <span
+              id="busuanzi_container_site_uv"
+              className="inline-flex items-center"
+            >
+              访客数 <span id="busuanzi_value_site_uv" className="mx-1 text-slate-400" /> 人
+            </span>
+          </div>
         </div>
       </div>
     </footer>

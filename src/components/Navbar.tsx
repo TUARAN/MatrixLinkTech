@@ -6,7 +6,7 @@ const navItems = [
   { to: "/about", label: "关于我们" },
   { to: "/projects", label: "项目矩阵" },
   { to: "/ecosystem", label: "AI 生态" },
-  { to: "/blog", label: "博客" }
+  { href: "https://tuaran.github.io/auto-sync-blog/", label: "博客" }
 ];
 
 export function Navbar() {
@@ -31,24 +31,36 @@ export function Navbar() {
 
           <nav className="hidden items-center gap-6 md:flex">
             {navItems.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                end={item.to === "/"}
-                className={({ isActive }) =>
-                  (isActive ? "nav-link-active" : "nav-link") +
-                  " relative px-1 py-1"
-                }
-              >
-                {({ isActive }) => (
-                  <>
-                    <span>{item.label}</span>
-                    {isActive && (
-                      <span className="absolute inset-x-1 -bottom-1 h-px rounded-full bg-gradient-to-r from-cyan-400 via-sky-500 to-indigo-500" />
-                    )}
-                  </>
-                )}
-              </NavLink>
+              item.href ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="nav-link relative px-1 py-1"
+                >
+                  <span>{item.label}</span>
+                </a>
+              ) : (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  end={item.to === "/"}
+                  className={({ isActive }) =>
+                    (isActive ? "nav-link-active" : "nav-link") +
+                    " relative px-1 py-1"
+                  }
+                >
+                  {({ isActive }) => (
+                    <>
+                      <span>{item.label}</span>
+                      {isActive && (
+                        <span className="absolute inset-x-1 -bottom-1 h-px rounded-full bg-gradient-to-r from-cyan-400 via-sky-500 to-indigo-500" />
+                      )}
+                    </>
+                  )}
+                </NavLink>
+              )
             ))}
           </nav>
 
@@ -77,20 +89,33 @@ export function Navbar() {
           <div className="border-t border-white/10 bg-slate-950/75 backdrop-blur-xl md:hidden">
             <nav className="container-main flex flex-col gap-1 py-3">
               {navItems.map((item) => (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  end={item.to === "/"}
-                  onClick={() => setOpen(false)}
-                  className={({ isActive }) =>
-                    (isActive
-                      ? "nav-link-active bg-slate-900/70"
-                      : "nav-link hover:bg-slate-900/40") +
-                    " rounded-lg px-3 py-2"
-                  }
-                >
-                  {item.label}
-                </NavLink>
+                item.href ? (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() => setOpen(false)}
+                    className="nav-link rounded-lg px-3 py-2 hover:bg-slate-900/40"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <NavLink
+                    key={item.to}
+                    to={item.to}
+                    end={item.to === "/"}
+                    onClick={() => setOpen(false)}
+                    className={({ isActive }) =>
+                      (isActive
+                        ? "nav-link-active bg-slate-900/70"
+                        : "nav-link hover:bg-slate-900/40") +
+                      " rounded-lg px-3 py-2"
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                )
               ))}
               <div className="mt-3 flex flex-wrap gap-2">
                 <div className="badge-soft">

@@ -27,12 +27,16 @@ export function HomePage() {
         <div className="pointer-events-none absolute right-[-4%] top-16 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl" />
         <div className="pointer-events-none absolute bottom-0 left-1/2 h-48 w-[36rem] -translate-x-1/2 rounded-full bg-indigo-500/7 blur-3xl" />
 
-        <div className="relative container-main pt-10 pb-16 sm:pt-14 sm:pb-20 lg:pt-16 lg:pb-24">
+        <div className="relative container-main pt-7 pb-16 sm:pt-10 sm:pb-20 lg:pt-12 lg:pb-24">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)] lg:items-center xl:gap-14">
             <div className="space-y-7 lg:pr-4">
               <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-gradient-to-r from-white/10 via-slate-900/80 to-cyan-500/10 px-5 py-2.5 text-sm font-medium text-slate-100 shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_20px_50px_rgba(8,15,30,0.45)] sm:text-base">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(74,222,128,0.9)]" />
-                广州矩联科技有限公司 · AI 生态连接者
+                <span className="text-slate-100">广州矩联科技有限公司</span>
+                <span className="text-slate-500">/</span>
+                <span className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-2.5 py-0.5 text-xs font-semibold tracking-[0.14em] text-cyan-200">
+                  官方门户
+                </span>
               </div>
               <div className="space-y-3">
                 <div className="text-xs font-medium uppercase tracking-[0.38em] text-slate-500">
@@ -67,6 +71,14 @@ export function HomePage() {
                 我们专注于 AI + 开发者生态，通过技术内容矩阵、创作者网络与 AI 工具，
                 构建面向开发者和 AI 用户的共生网络。
               </p>
+              <div className="inline-flex max-w-2xl rounded-2xl border border-rose-400/20 bg-white/5 px-5 py-3 shadow-[0_12px_35px_rgba(15,23,42,0.18)] backdrop-blur-sm">
+                <p className="text-pretty text-lg font-semibold leading-8 text-slate-50 sm:text-xl">
+                  <span className="text-rose-300">把混乱“编程”为系统</span>
+                  <span className="mx-2 text-slate-500">，</span>
+                  <span className="text-cyan-300">把想法“变成”为产品</span>
+                  <span className="text-slate-400">。</span>
+                </p>
+              </div>
               <div className="flex flex-wrap gap-3">
                 <a
                   href={bloggerAllianceUrl}
@@ -84,9 +96,14 @@ export function HomePage() {
                 >
                   订阅前端周刊
                 </a>
-                <button className="focus-ring inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-slate-100 shadow-[0_12px_30px_rgba(15,23,42,0.28)] transition hover:-translate-y-0.5 hover:border-rose-400/40 hover:bg-rose-400/10">
+                <a
+                  href="https://tuaran.me/#project-matrix"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="focus-ring inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-slate-100 shadow-[0_12px_30px_rgba(15,23,42,0.28)] transition hover:-translate-y-0.5 hover:border-rose-400/40 hover:bg-rose-400/10"
+                >
                   查看项目矩阵
-                </button>
+                </a>
               </div>
               <div className="glass-card space-y-3 border-white/10 bg-slate-900/28 p-4 shadow-[0_20px_60px_rgba(2,8,23,0.38)] sm:p-5">
                 <div className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
@@ -124,7 +141,7 @@ export function HomePage() {
                             Brand Signal Panel
                           </div>
                           <h3 className="mt-2 text-2xl font-semibold text-slate-50">
-                            矩联官网概览
+                            能力看板
                           </h3>
                         </div>
                         <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-[10px] font-medium text-emerald-300">
