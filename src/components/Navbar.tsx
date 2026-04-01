@@ -1,13 +1,31 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-const navItems = [
+type InternalNavItem = {
+  label: string;
+  to: string;
+  href?: never;
+};
+
+type ExternalNavItem = {
+  label: string;
+  href: string;
+  to?: never;
+};
+
+type NavItem = InternalNavItem | ExternalNavItem;
+
+const navItems: NavItem[] = [
   { to: "/", label: "首页" },
   { to: "/about", label: "关于我们" },
   { to: "/projects", label: "项目矩阵" },
   { to: "/ecosystem", label: "AI 生态" },
   { href: "https://tuaran.github.io/auto-sync-blog/", label: "博客" }
 ];
+
+function isExternalNavItem(item: NavItem): item is ExternalNavItem {
+  return "href" in item;
+}
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -31,7 +49,7 @@ export function Navbar() {
 
           <nav className="hidden items-center gap-6 md:flex">
             {navItems.map((item) => (
-              item.href ? (
+              isExternalNavItem(item) ? (
                 <a
                   key={item.href}
                   href={item.href}
@@ -89,7 +107,7 @@ export function Navbar() {
           <div className="border-t border-white/10 bg-slate-950/75 backdrop-blur-xl md:hidden">
             <nav className="container-main flex flex-col gap-1 py-3">
               {navItems.map((item) => (
-                item.href ? (
+                isExternalNavItem(item) ? (
                   <a
                     key={item.href}
                     href={item.href}
