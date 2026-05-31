@@ -19,9 +19,7 @@ const navItems: NavItem[] = [
   { to: "/", label: "首页" },
   { to: "/projects", label: "项目" },
   { to: "/updates", label: "动态" },
-  { to: "/about", label: "关于" },
-  { to: "/cooperation", label: "合作" },
-  { href: "https://2aran.com", label: "2aran.com" }
+  { to: "/about", label: "关于" }
 ];
 
 function isExternalNavItem(item: NavItem): item is ExternalNavItem {
