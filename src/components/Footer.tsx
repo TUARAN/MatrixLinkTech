@@ -28,12 +28,12 @@ export function Footer() {
             <div className="flex items-center gap-1.5">
               <span className="text-slate-500">友情链接</span>
               <a
-                href="https://tuaran.me"
+                href="https://2aran.com"
                 target="_blank"
                 rel="noreferrer"
                 className="text-slate-300 hover:text-cyan-300"
               >
-                tuaran.me
+                2aran.com
               </a>
             </div>
             <span className="hidden h-3 w-px bg-slate-700/80 sm:inline-block" />
@@ -54,12 +54,20 @@ export function Footer() {
                 GitHub
               </a>
               <a
-                href="https://x.com"
+                href="https://blogger-alliance.cn/"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-slate-200"
               >
-                X
+                博主联盟
+              </a>
+              <a
+                href="https://frontendweekly.cn/"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-slate-200"
+              >
+                前端周刊
               </a>
             </div>
           </div>

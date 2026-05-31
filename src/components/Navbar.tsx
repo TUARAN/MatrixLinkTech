@@ -17,10 +17,11 @@ type NavItem = InternalNavItem | ExternalNavItem;
 
 const navItems: NavItem[] = [
   { to: "/", label: "首页" },
-  { to: "/about", label: "关于我们" },
-  { to: "/projects", label: "项目矩阵" },
-  { to: "/ecosystem", label: "AI 生态" },
-  { href: "https://tuaran.github.io/auto-sync-blog/", label: "博客" }
+  { to: "/projects", label: "项目" },
+  { to: "/updates", label: "动态" },
+  { to: "/about", label: "关于" },
+  { to: "/cooperation", label: "合作" },
+  { href: "https://2aran.com", label: "2aran.com" }
 ];
 
 function isExternalNavItem(item: NavItem): item is ExternalNavItem {
@@ -85,7 +86,7 @@ export function Navbar() {
           <div className="hidden items-center gap-2 md:flex">
             <div className="badge-soft">
               <span className="contact-indicator mr-1.5" />
-              联系我们：请添加微信 atar24
+              联系：微信 atar24
             </div>
           </div>
 
@@ -138,7 +139,7 @@ export function Navbar() {
               <div className="mt-3 flex flex-wrap gap-2">
                 <div className="badge-soft">
                   <span className="contact-indicator mr-1.5" />
-                  联系我们：请添加微信 atar24
+                  联系：微信 atar24
                 </div>
               </div>
             </nav>

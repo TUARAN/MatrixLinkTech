@@ -16,7 +16,7 @@ const seoMap: Record<string, SeoEntry> = {
   "/": {
     title: "广州矩联科技有限公司 - 官网 | 矩联科技",
     description:
-      "广州矩联科技有限公司官方网站，聚焦 AI 开发者生态、创作者网络、项目矩阵与企业信息公示，帮助用户快速了解矩联科技与广州矩联科技的品牌、项目和合作能力。",
+      "广州矩联科技有限公司官方网站，展示 MatrixLinkTech 的真实项目、内容来源、合作方式与企业信息。",
     keywords:
       "矩联科技,广州矩联科技,广州矩联科技有限公司,矩联科技官网,AI 开发者生态,开发者网络,创作者网络",
     path: "/"
@@ -24,34 +24,34 @@ const seoMap: Record<string, SeoEntry> = {
   "/about": {
     title: "关于我们 - 广州矩联科技有限公司 | 矩联科技",
     description:
-      "了解广州矩联科技有限公司的发展方向、企业使命与开发者生态理念，认识矩联科技如何围绕 AI 与创作者网络构建协作矩阵。",
+      "了解广州矩联科技有限公司的公司信息、联系方式、真实项目原则与内容沉淀方式。",
     keywords:
       "广州矩联科技有限公司,矩联科技,关于矩联科技,广州矩联科技,AI 开发者生态",
     path: "/about"
   },
   "/projects": {
-    title: "项目矩阵 - 广州矩联科技有限公司 | 矩联科技",
+    title: "项目 - 广州矩联科技有限公司 | 矩联科技",
     description:
-      "查看广州矩联科技有限公司的项目矩阵，包括博主联盟、前端周刊与 AI 工具矩阵，了解矩联科技面向开发者生态的核心项目布局。",
+      "查看广州矩联科技有限公司的真实项目入口，包括博主联盟、前端周刊与 AI 工作流孵化方向。",
     keywords:
       "矩联科技项目,广州矩联科技项目矩阵,博主联盟,前端周刊,AI 工具矩阵",
     path: "/projects"
   },
-  "/ecosystem": {
-    title: "AI 生态 - 广州矩联科技有限公司 | 矩联科技",
+  "/updates": {
+    title: "动态 - 广州矩联科技有限公司 | 矩联科技",
     description:
-      "广州矩联科技有限公司围绕开发者、创作者、AI 工具与科技品牌构建 AI 生态协作网络，展示矩联科技的生态连接能力。",
+      "广州矩联科技有限公司动态索引，引导到 2aran.com、前端周刊与博主联盟等真实内容来源。",
     keywords:
-      "矩联科技AI生态,广州矩联科技,开发者生态,创作者网络,AI 工具",
-    path: "/ecosystem"
+      "矩联科技动态,广州矩联科技,2aran,前端周刊,博主联盟",
+    path: "/updates"
   },
-  "/blog": {
-    title: "博客动态 - 广州矩联科技有限公司 | 矩联科技",
+  "/cooperation": {
+    title: "合作 - 广州矩联科技有限公司 | 矩联科技",
     description:
-      "阅读广州矩联科技有限公司发布的技术周刊、深度解读与生态观察内容，了解矩联科技对 AI 开发者生态与创作者网络的持续输出。",
+      "联系广州矩联科技有限公司，围绕技术内容、创作者网络、开发者触达与 AI 工作流进行合作。",
     keywords:
-      "矩联科技博客,广州矩联科技动态,前端周刊,AI 技术文章,开发者内容",
-    path: "/blog"
+      "矩联科技合作,广州矩联科技合作,技术内容合作,创作者合作,AI 工作流",
+    path: "/cooperation"
   }
 };
 
@@ -71,7 +71,12 @@ const organizationSchema = {
     addressLocality: "广州市",
     streetAddress: "广州市天河区中山大道建中路5号3A03房W45室"
   },
-  sameAs: ["https://github.com/matrixlinktech"]
+  sameAs: [
+    "https://github.com/matrixlinktech",
+    "https://2aran.com",
+    "https://blogger-alliance.cn/",
+    "https://frontendweekly.cn/"
+  ]
 };
 
 function upsertMeta(selector: string, attributes: Record<string, string>) {

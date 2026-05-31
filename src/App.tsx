@@ -5,8 +5,8 @@ import { SeoManager } from "./components/SeoManager";
 import { HomePage } from "./pages/Home";
 import { AboutPage } from "./pages/About";
 import { ProjectsPage } from "./pages/Projects";
-import { EcosystemPage } from "./pages/Ecosystem";
-import { BlogPage } from "./pages/Blog";
+import { UpdatesPage } from "./pages/Updates";
+import { CooperationPage } from "./pages/Cooperation";
 
 function App() {
   return (
@@ -17,8 +17,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/ecosystem" element={<EcosystemPage />} />
-        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/updates" element={<UpdatesPage />} />
+        <Route path="/cooperation" element={<CooperationPage />} />
       </Routes>
       <Footer />
     </div>
