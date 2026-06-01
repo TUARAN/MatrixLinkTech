@@ -56,34 +56,48 @@ export const projects: Project[] = [
   }
 ];
 
+export type UpdateCadence = "daily" | "weekly" | "ongoing";
+
 export type UpdateItem = {
   title: string;
   source: string;
   url: string;
   description: string;
+  cadence: UpdateCadence;
+  highlight?: boolean;
+};
+
+export const cadenceLabel: Record<UpdateCadence, string> = {
+  daily: "基本每天更新",
+  weekly: "每周更新",
+  ongoing: "不定期更新"
 };
 
 export const updates: UpdateItem[] = [
   {
-    title: "调研内容与项目更新",
+    title: "调研内容与项目记录",
     source: "2aran.com",
     url: "https://2aran.com/articles",
     description:
-      "查看基本每天更新的技术调研、项目记录、AI 工作流实验和长期内容沉淀。"
+      "技术调研、项目记录、AI 工作流实验和长期内容沉淀，是 MatrixLinkTech 当前更新最频繁的内容源。",
+    cadence: "daily",
+    highlight: true
   },
   {
     title: "前端周刊",
     source: "frontendweekly.cn",
     url: "https://frontendweekly.cn/",
     description:
-      "关注前端、AI 开发和工程效率相关的精选内容与周刊更新。"
+      "围绕前端、AI 开发和工程效率的精选内容与周刊更新。",
+    cadence: "weekly"
   },
   {
     title: "博主联盟",
     source: "blogger-alliance.cn",
     url: "https://blogger-alliance.cn/",
     description:
-      "了解创作者合作、品牌共创和技术内容分发相关信息。"
+      "创作者合作、品牌共创和技术内容分发相关信息。",
+    cadence: "ongoing"
   }
 ];
 
