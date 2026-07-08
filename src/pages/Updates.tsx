@@ -1,4 +1,10 @@
-import { updates, cadenceLabel, type UpdateCadence } from "../data/site";
+import type { CSSProperties } from "react";
+import {
+  matrixEngines,
+  updates,
+  cadenceLabel,
+  type UpdateCadence
+} from "../data/site";
 
 const cadenceChip: Record<UpdateCadence, string> = {
   daily:
@@ -34,7 +40,8 @@ export function UpdatesPage() {
               href={highlight.url}
               target="_blank"
               rel="noreferrer"
-              className="glass-card group flex flex-col gap-6 p-6 transition hover:border-cyan-400/40 hover:bg-cyan-400/5 sm:p-7 lg:flex-row lg:items-center lg:justify-between"
+              className="neon-panel group flex flex-col gap-6 p-6 transition hover:-translate-y-1 sm:p-7 lg:flex-row lg:items-center lg:justify-between"
+              style={{ "--panel-color": matrixEngines[5].color } as CSSProperties}
             >
               <div className="space-y-4 lg:max-w-2xl">
                 <div className="flex flex-wrap items-center gap-2">
@@ -80,13 +87,16 @@ export function UpdatesPage() {
               </p>
             </header>
             <div className="grid gap-4 md:grid-cols-2">
-              {rest.map((item) => (
+              {rest.map((item, index) => (
                 <a
                   key={item.url}
                   href={item.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="glass-card group flex h-full flex-col gap-4 p-5 transition hover:border-cyan-400/40 hover:bg-cyan-400/5"
+                  className="neon-panel group flex h-full flex-col gap-4 p-5 transition hover:-translate-y-1"
+                  style={{
+                    "--panel-color": [matrixEngines[1].color, matrixEngines[0].color][index % 2]
+                  } as CSSProperties}
                 >
                   <div className="flex items-center justify-between gap-3">
                     <span className="text-xs font-medium uppercase tracking-[0.16em] text-slate-500">

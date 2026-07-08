@@ -1,5 +1,7 @@
+import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import { company, projects, updates } from "../data/site";
+import { MatrixStrategyMap } from "../components/MatrixStrategyMap";
 
 const liveProjects = projects.filter((project) => project.status === "live");
 
@@ -101,30 +103,8 @@ export function HomePage() {
       </section>
 
       <section className="section">
-        <div className="container-main grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-          <div className="space-y-3">
-            <p className="badge-soft text-[11px]">做什么</p>
-            <h2 className="text-2xl font-semibold text-slate-50">
-              用真实项目承载公司叙事
-            </h2>
-            <p className="text-sm leading-7 text-slate-300 sm:text-base">
-              官网不再展示无法验证的指标，而是把已经上线的站点、持续更新的内容和可联系的合作方式放在前面。
-            </p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {[
-              ["内容", "前端周刊、技术文章、项目记录与专题内容。"],
-              ["网络", "连接技术创作者、开发者社区与科技品牌。"],
-              ["工具", "围绕真实工作流孵化 AI 自动化能力。"]
-            ].map(([title, desc]) => (
-              <div key={title} className="glass-card p-4 sm:p-5">
-                <div className="text-xs font-medium text-slate-400">
-                  {title}
-                </div>
-                <p className="mt-2 text-sm leading-6 text-slate-200">{desc}</p>
-              </div>
-            ))}
-          </div>
+        <div className="container-matrix">
+          <MatrixStrategyMap />
         </div>
       </section>
 
@@ -142,13 +122,16 @@ export function HomePage() {
             </Link>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
-            {updates.map((item) => (
+            {updates.map((item, index) => (
               <a
                 key={item.url}
                 href={item.url}
                 target="_blank"
                 rel="noreferrer"
-                className="glass-card block p-4 transition hover:border-cyan-400/40 hover:bg-cyan-400/5 sm:p-5"
+                className="neon-panel block p-4 transition hover:-translate-y-1 sm:p-5"
+                style={{
+                  "--panel-color": ["#2f8cff", "#ff8a4c", "#44df9a"][index % 3]
+                } as CSSProperties}
               >
                 <div className="text-xs font-medium uppercase tracking-[0.16em] text-slate-500">
                   {item.source}

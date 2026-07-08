@@ -150,7 +150,8 @@ body {
 }
 
 .glass-card {
-  @apply bg-slate-900/35 border border-white/10 backdrop-blur-xl rounded-xl shadow-soft-glass;
+  @apply bg-slate-900/35 border border-white/10 backdrop-blur-xl shadow-soft-glass;
+  border-radius: 8px;
 }
 
 .gradient-text {
@@ -179,6 +180,11 @@ body {
   @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
 }
 
+.container-matrix {
+  @apply mx-auto w-full px-4 sm:px-6 lg:px-8;
+  max-width: 96rem;
+}
+
 .nav-link {
   @apply text-sm font-medium text-slate-300 hover:text-white transition-colors;
 }
@@ -189,4 +195,620 @@ body {
 
 .focus-ring {
   @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950;
+}
+
+.matrix-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #7dd3fc;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.matrix-kicker::before {
+  content: "";
+  display: inline-block;
+  width: 2.4rem;
+  height: 0.14rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.85);
+}
+
+.matrix-map {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 2.4vw, 2.75rem);
+  min-height: auto;
+}
+
+.matrix-map--compact {
+  grid-template-columns: 1fr;
+  min-height: auto;
+}
+
+.matrix-map--compact .matrix-map__copy {
+  max-width: none;
+}
+
+.matrix-map--compact .matrix-map__stage {
+  min-height: 560px;
+}
+
+.matrix-map__copy {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(460px, 1.08fr);
+  gap: clamp(1.25rem, 3vw, 3.5rem);
+  align-items: start;
+  min-height: 0;
+}
+
+.matrix-map__intro h2 {
+  margin-top: 0.9rem;
+  color: #f8fafc;
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  font-weight: 850;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.matrix-map__intro h2 span {
+  display: block;
+  margin-top: 0.7rem;
+  color: #cbd5e1;
+  font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+  font-weight: 500;
+}
+
+.matrix-map__summary {
+  margin-top: 1.8rem;
+  max-width: 28rem;
+  color: #cbd5e1;
+  font-size: 0.96rem;
+  line-height: 1.9;
+}
+
+.matrix-principles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 0;
+}
+
+.matrix-principle {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: center;
+  min-height: 4.65rem;
+  border: 1px solid rgba(125, 211, 252, 0.12);
+  border-radius: 8px;
+  padding: 0.75rem;
+  background: rgba(2, 6, 23, 0.28);
+}
+
+.matrix-principle__icon {
+  position: relative;
+  display: block;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 1px solid rgba(56, 189, 248, 0.48);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(14, 165, 233, 0.28), rgba(2, 6, 23, 0.74));
+  box-shadow: inset 0 0 22px rgba(14, 165, 233, 0.28), 0 0 18px rgba(14, 165, 233, 0.24);
+}
+
+.matrix-principle__icon::before,
+.matrix-principle__icon::after,
+.matrix-principle__icon i {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+.matrix-principle__icon--connect::before {
+  left: 0.86rem;
+  top: 1.36rem;
+  width: 1.2rem;
+  height: 1px;
+  background: #7dd3fc;
+  box-shadow: 0 0 12px rgba(125, 211, 252, 0.9);
+  transform: rotate(-26deg);
+}
+
+.matrix-principle__icon--connect::after {
+  left: 1.43rem;
+  top: 1.37rem;
+  width: 0.92rem;
+  height: 1px;
+  background: #7dd3fc;
+  box-shadow: 0 0 12px rgba(125, 211, 252, 0.9);
+  transform: rotate(34deg);
+}
+
+.matrix-principle__icon--connect i {
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: #bae6fd;
+  box-shadow: 0 0 14px rgba(125, 211, 252, 0.92);
+}
+
+.matrix-principle__icon--connect i:nth-child(1) {
+  left: 0.58rem;
+  top: 1.5rem;
+}
+
+.matrix-principle__icon--connect i:nth-child(2) {
+  left: 1.24rem;
+  top: 0.92rem;
+}
+
+.matrix-principle__icon--connect i:nth-child(3) {
+  right: 0.55rem;
+  top: 1.7rem;
+}
+
+.matrix-principle__icon--growth::before {
+  left: 0.72rem;
+  bottom: 0.78rem;
+  width: 1.48rem;
+  height: 1.48rem;
+  border-top: 2px solid #7dd3fc;
+  border-right: 2px solid #7dd3fc;
+  transform: rotate(45deg);
+  box-shadow: 4px -4px 12px rgba(125, 211, 252, 0.32);
+}
+
+.matrix-principle__icon--growth::after {
+  left: 0.72rem;
+  bottom: 0.78rem;
+  width: 1.45rem;
+  height: 2px;
+  background: #7dd3fc;
+  transform: rotate(-45deg);
+  transform-origin: left center;
+  box-shadow: 0 0 14px rgba(125, 211, 252, 0.86);
+}
+
+.matrix-principle__icon--growth i {
+  left: 0.56rem;
+  width: 0.28rem;
+  border-radius: 999px 999px 0 0;
+  background: rgba(186, 230, 253, 0.78);
+}
+
+.matrix-principle__icon--growth i:nth-child(1) {
+  bottom: 0.7rem;
+  height: 0.46rem;
+}
+
+.matrix-principle__icon--growth i:nth-child(2) {
+  left: 0.98rem;
+  bottom: 0.7rem;
+  height: 0.75rem;
+}
+
+.matrix-principle__icon--growth i:nth-child(3) {
+  left: 1.4rem;
+  bottom: 0.7rem;
+  height: 1.04rem;
+}
+
+.matrix-principle__icon--global::before {
+  inset: 0.62rem;
+  border: 2px solid #7dd3fc;
+  border-radius: 999px;
+  box-shadow: inset 0 0 12px rgba(125, 211, 252, 0.26), 0 0 14px rgba(125, 211, 252, 0.64);
+}
+
+.matrix-principle__icon--global::after {
+  left: 0.74rem;
+  right: 0.74rem;
+  top: 1.34rem;
+  height: 2px;
+  background: #7dd3fc;
+  box-shadow: 0 0 12px rgba(125, 211, 252, 0.75);
+}
+
+.matrix-principle__icon--global i:nth-child(1),
+.matrix-principle__icon--global i:nth-child(2) {
+  top: 0.66rem;
+  bottom: 0.66rem;
+  width: 0.7rem;
+  border: 1.5px solid #7dd3fc;
+  border-top: 0;
+  border-bottom: 0;
+  border-radius: 999px;
+}
+
+.matrix-principle__icon--global i:nth-child(1) {
+  left: 0.98rem;
+}
+
+.matrix-principle__icon--global i:nth-child(2) {
+  right: 0.98rem;
+}
+
+.matrix-principle__icon--global i:nth-child(3) {
+  display: none;
+}
+
+.matrix-principle__icon--value::before,
+.matrix-principle__icon--value::after {
+  left: 50%;
+  top: 50%;
+  width: 1.28rem;
+  height: 1.28rem;
+  border: 2px solid #bae6fd;
+  transform: translate(-50%, -50%) rotate(45deg);
+  box-shadow: 0 0 16px rgba(125, 211, 252, 0.78);
+}
+
+.matrix-principle__icon--value::after {
+  width: 0.58rem;
+  height: 0.58rem;
+  background: rgba(125, 211, 252, 0.18);
+}
+
+.matrix-principle__icon--value i {
+  width: 0.36rem;
+  height: 1px;
+  background: #7dd3fc;
+  box-shadow: 0 0 10px rgba(125, 211, 252, 0.8);
+}
+
+.matrix-principle__icon--value i:nth-child(1) {
+  left: 0.46rem;
+  top: 0.68rem;
+  transform: rotate(45deg);
+}
+
+.matrix-principle__icon--value i:nth-child(2) {
+  right: 0.46rem;
+  top: 0.68rem;
+  transform: rotate(-45deg);
+}
+
+.matrix-principle__icon--value i:nth-child(3) {
+  left: 1.22rem;
+  bottom: 0.44rem;
+  transform: rotate(90deg);
+}
+
+.matrix-principle strong {
+  color: #f8fafc;
+  font-size: 1rem;
+  font-weight: 750;
+}
+
+.matrix-principle p {
+  margin-top: 0.12rem;
+  color: #94a3b8;
+  font-size: 0.82rem;
+}
+
+.matrix-map__stage {
+  position: relative;
+  min-height: 650px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, rgba(14, 165, 233, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(14, 165, 233, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at center, rgba(14, 165, 233, 0.22), transparent 34%),
+    linear-gradient(135deg, rgba(2, 6, 23, 0.9), rgba(8, 13, 35, 0.82));
+  background-size: 38px 38px, 38px 38px, 100% 100%, 100% 100%;
+  box-shadow: inset 0 0 80px rgba(14, 165, 233, 0.11);
+}
+
+.matrix-map__stage::before,
+.matrix-map__stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.matrix-map__stage::before {
+  opacity: 0.55;
+  background:
+    linear-gradient(115deg, transparent 0 45%, rgba(37, 99, 235, 0.35) 49%, transparent 53% 100%),
+    linear-gradient(68deg, transparent 0 50%, rgba(168, 85, 247, 0.26) 52%, transparent 56% 100%),
+    linear-gradient(160deg, transparent 0 56%, rgba(34, 211, 238, 0.22) 58%, transparent 62% 100%);
+  background-size: 360px 360px, 420px 420px, 520px 520px;
+}
+
+.matrix-map__stage::after {
+  background:
+    radial-gradient(circle at 22% 70%, rgba(14, 165, 233, 0.42) 0 1px, transparent 2px),
+    radial-gradient(circle at 78% 22%, rgba(168, 85, 247, 0.4) 0 1px, transparent 2px),
+    radial-gradient(circle at 56% 80%, rgba(34, 211, 238, 0.36) 0 1px, transparent 2px);
+}
+
+.matrix-map__rings {
+  position: absolute;
+  inset: 21% 28%;
+  border: 1px dashed rgba(56, 189, 248, 0.38);
+  border-radius: 999px;
+  box-shadow:
+    0 0 0 32px rgba(14, 165, 233, 0.025),
+    0 0 0 68px rgba(59, 130, 246, 0.022),
+    0 0 44px rgba(14, 165, 233, 0.24);
+}
+
+.matrix-map__axis {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(35, 217, 241, 0.9), transparent);
+  box-shadow: 0 0 18px rgba(35, 217, 241, 0.75);
+}
+
+.matrix-map__axis--vertical {
+  left: 50%;
+  right: auto;
+  top: 10%;
+  bottom: 10%;
+  width: 2px;
+  height: auto;
+  background: linear-gradient(180deg, transparent, rgba(47, 140, 255, 0.78), transparent);
+}
+
+.matrix-map__center,
+.matrix-engine {
+  clip-path: polygon(24% 0, 76% 0, 100% 50%, 76% 100%, 24% 100%, 0 50%);
+}
+
+.matrix-map__center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: clamp(170px, 18vw, 230px);
+  min-height: clamp(145px, 15vw, 196px);
+  padding: 2rem;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(125, 211, 252, 0.88);
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.56), rgba(2, 6, 23, 0.88)),
+    radial-gradient(circle at center, rgba(14, 165, 233, 0.34), transparent 70%);
+  color: #f8fafc;
+  text-align: center;
+  box-shadow:
+    inset 0 0 34px rgba(14, 165, 233, 0.3),
+    0 0 38px rgba(14, 165, 233, 0.58);
+}
+
+.matrix-mark {
+  color: #7dd3fc;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 950;
+  line-height: 1;
+  text-shadow: 0 0 24px rgba(125, 211, 252, 0.82);
+}
+
+.matrix-map__center strong {
+  margin-top: 0.4rem;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  line-height: 1.15;
+}
+
+.matrix-map__center span {
+  color: #e0f2fe;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  font-weight: 750;
+}
+
+.matrix-map__center small {
+  margin-top: 0.35rem;
+  color: #bfdbfe;
+  font-size: 0.72rem;
+}
+
+.matrix-engine {
+  --engine-color: #22d3ee;
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  width: clamp(150px, 15.5vw, 194px);
+  min-height: 146px;
+  padding: 0.95rem 1.15rem 1rem;
+  border: 1.5px solid color-mix(in srgb, var(--engine-color), white 18%);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--engine-color), transparent 82%), rgba(2, 6, 23, 0.76)),
+    rgba(2, 6, 23, 0.62);
+  text-align: center;
+  box-shadow:
+    inset 0 0 28px color-mix(in srgb, var(--engine-color), transparent 78%),
+    0 0 28px color-mix(in srgb, var(--engine-color), transparent 55%);
+}
+
+.matrix-engine::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  clip-path: inherit;
+  border: 1px solid color-mix(in srgb, var(--engine-color), transparent 46%);
+  pointer-events: none;
+}
+
+.matrix-engine__code {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.1rem;
+  height: 1.35rem;
+  border-radius: 999px;
+  background: var(--engine-color);
+  color: #f8fafc;
+  font-size: 0.76rem;
+  font-weight: 850;
+  line-height: 1;
+  box-shadow: 0 0 18px color-mix(in srgb, var(--engine-color), transparent 30%);
+}
+
+.matrix-engine h3 {
+  margin-top: 0.45rem;
+  color: var(--engine-color);
+  font-size: clamp(1.7rem, 2.7vw, 2.25rem);
+  font-weight: 900;
+  line-height: 1;
+  text-shadow: 0 0 18px color-mix(in srgb, var(--engine-color), transparent 38%);
+}
+
+.matrix-engine strong {
+  margin-top: 0.18rem;
+  color: #f8fafc;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.matrix-engine p {
+  margin-top: 0.65rem;
+  color: #cbd5e1;
+  font-size: 0.72rem;
+}
+
+.matrix-engine ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+}
+
+.matrix-engine li {
+  border: 1px solid color-mix(in srgb, var(--engine-color), transparent 46%);
+  border-radius: 999px;
+  padding: 0.16rem 0.45rem;
+  color: color-mix(in srgb, var(--engine-color), white 22%);
+  font-size: 0.63rem;
+  line-height: 1.2;
+}
+
+.matrix-engine--1 {
+  left: 34%;
+  top: 4%;
+}
+
+.matrix-engine--2 {
+  right: 8%;
+  top: 7%;
+}
+
+.matrix-engine--3 {
+  right: 4%;
+  top: 36%;
+}
+
+.matrix-engine--4 {
+  left: 4%;
+  top: 36%;
+}
+
+.matrix-engine--5 {
+  left: 29%;
+  bottom: 4%;
+}
+
+.matrix-engine--6 {
+  right: 18%;
+  bottom: 4%;
+}
+
+.neon-panel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--panel-color, #22d3ee), transparent 52%);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--panel-color, #22d3ee), transparent 90%), rgba(2, 6, 23, 0.78)),
+    rgba(15, 23, 42, 0.42);
+  box-shadow:
+    inset 0 0 24px color-mix(in srgb, var(--panel-color, #22d3ee), transparent 88%),
+    0 0 24px color-mix(in srgb, var(--panel-color, #22d3ee), transparent 78%);
+}
+
+.neon-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 0 42%, color-mix(in srgb, var(--panel-color, #22d3ee), transparent 82%) 50%, transparent 58% 100%);
+  opacity: 0.52;
+}
+
+.neon-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1080px) {
+  .matrix-map {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .matrix-map__copy {
+    grid-template-columns: 1fr;
+  }
+
+  .matrix-map__summary {
+    max-width: 42rem;
+  }
+
+  .matrix-principles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .matrix-map__stage {
+    min-height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .matrix-map__rings,
+  .matrix-map__axis,
+  .matrix-map__center {
+    display: none;
+  }
+
+  .matrix-engine,
+  .matrix-engine--1,
+  .matrix-engine--2,
+  .matrix-engine--3,
+  .matrix-engine--4,
+  .matrix-engine--5,
+  .matrix-engine--6 {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    min-height: 172px;
+  }
+}
+
+@media (max-width: 640px) {
+  .matrix-principles,
+  .matrix-map__stage {
+    grid-template-columns: 1fr;
+  }
+
+  .matrix-map__intro h2 {
+    font-size: clamp(1.85rem, 11vw, 2.55rem);
+  }
 }

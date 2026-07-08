@@ -1,4 +1,11 @@
-import { projects, type Project, type ProjectStatus } from "../data/site";
+import type { CSSProperties } from "react";
+import { MatrixStrategyMap } from "../components/MatrixStrategyMap";
+import {
+  matrixEngines,
+  projects,
+  type Project,
+  type ProjectStatus
+} from "../data/site";
 
 const statusMeta: Record<
   ProjectStatus,
@@ -33,8 +40,18 @@ const statusMeta: Record<
 
 function ProjectCard({ project }: { project: Project }) {
   const meta = statusMeta[project.status];
+  const color =
+    project.title === "博主联盟"
+      ? matrixEngines[0].color
+      : project.title === "前端周刊"
+        ? matrixEngines[1].color
+        : matrixEngines[5].color;
+
   return (
-    <article className="glass-card space-y-5 p-5 sm:p-6">
+    <article
+      className="neon-panel space-y-5 p-5 sm:p-6"
+      style={{ "--panel-color": color } as CSSProperties}
+    >
       <div className="flex flex-wrap items-center gap-3">
         <span className="badge-soft text-[11px]">{project.label}</span>
         <span className={meta.chip}>{meta.label}</span>
@@ -83,11 +100,17 @@ export function ProjectsPage() {
         <div className="container-main max-w-4xl space-y-4">
           <p className="badge-soft text-[11px]">项目 · 真实进度</p>
           <h1 className="text-3xl font-semibold text-slate-50 sm:text-4xl">
-            已上线的可直接访问，孵化中的同步研发记录
+            项目进入六大增长引擎
           </h1>
           <p className="text-sm leading-7 text-slate-300 sm:text-base">
-            我们把项目按真实进度分成两类展示：已上线项目给出独立站点入口，孵化中方向标注明确，并引导到 2aran.com 查看相关思考。
+            已上线项目给出独立站点入口，孵化中方向标注明确，并引导到 2aran.com 查看相关思考。展示方式跟随 MatrixLinkTech 的内容与产品矩阵。
           </p>
+        </div>
+      </section>
+
+      <section className="section pt-0">
+        <div className="container-matrix">
+          <MatrixStrategyMap compact />
         </div>
       </section>
 

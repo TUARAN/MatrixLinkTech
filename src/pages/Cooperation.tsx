@@ -1,4 +1,5 @@
-import { company, cooperationTracks, projects } from "../data/site";
+import type { CSSProperties } from "react";
+import { company, cooperationTracks, matrixEngines, projects } from "../data/site";
 
 export function CooperationPage() {
   const creatorProject = projects.find((project) => project.title === "博主联盟");
@@ -19,8 +20,14 @@ export function CooperationPage() {
 
       <section className="section">
         <div className="container-main grid gap-5 md:grid-cols-3">
-          {cooperationTracks.map((track) => (
-            <div key={track.title} className="glass-card p-5">
+          {cooperationTracks.map((track, index) => (
+            <div
+              key={track.title}
+              className="neon-panel p-5"
+              style={{
+                "--panel-color": [matrixEngines[1].color, matrixEngines[0].color, matrixEngines[5].color][index]
+              } as CSSProperties}
+            >
               <h2 className="text-lg font-semibold text-slate-50">
                 {track.title}
               </h2>
@@ -34,7 +41,10 @@ export function CooperationPage() {
 
       <section className="section">
         <div className="container-main grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.75fr)]">
-          <div className="glass-card p-5 sm:p-6">
+          <div
+            className="neon-panel p-5 sm:p-6"
+            style={{ "--panel-color": matrixEngines[2].color } as CSSProperties}
+          >
             <h2 className="text-xl font-semibold text-slate-50">
               联系方式
             </h2>
@@ -67,7 +77,8 @@ export function CooperationPage() {
               href={creatorProject.url}
               target="_blank"
               rel="noreferrer"
-              className="glass-card block p-5 transition hover:border-cyan-400/40 hover:bg-cyan-400/5 sm:p-6"
+              className="neon-panel block p-5 transition hover:-translate-y-1 sm:p-6"
+              style={{ "--panel-color": matrixEngines[0].color } as CSSProperties}
             >
               <div className="text-xs font-medium uppercase tracking-[0.16em] text-slate-500">
                 Creator Network

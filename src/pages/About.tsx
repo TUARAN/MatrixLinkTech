@@ -1,6 +1,8 @@
 import { useState } from "react";
+import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
-import { company } from "../data/site";
+import { MatrixStrategyMap } from "../components/MatrixStrategyMap";
+import { company, matrixEngines } from "../data/site";
 
 const creditCheckUrl =
   "https://www.gsxt.gov.cn/index.html";
@@ -87,7 +89,10 @@ export function AboutPage() {
             </p>
           </div>
 
-          <div className="glass-card space-y-4 p-5 text-sm text-slate-300">
+          <div
+            className="neon-panel space-y-4 p-5 text-sm text-slate-300"
+            style={{ "--panel-color": matrixEngines[2].color } as CSSProperties}
+          >
             <div>
               <div className="flex items-center justify-between gap-3">
                 <span className="text-xs font-medium uppercase tracking-[0.16em] text-slate-500">
@@ -158,8 +163,17 @@ export function AboutPage() {
       </section>
 
       <section className="section pt-0">
+        <div className="container-matrix">
+          <MatrixStrategyMap compact />
+        </div>
+      </section>
+
+      <section className="section pt-0">
         <div className="container-main grid gap-5 md:grid-cols-3">
-          <div className="glass-card space-y-3 p-5 sm:p-6">
+          <div
+            className="neon-panel space-y-3 p-5 sm:p-6"
+            style={{ "--panel-color": matrixEngines[5].color } as CSSProperties}
+          >
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-cyan-300/80">
               业务方向
             </p>
@@ -176,7 +190,10 @@ export function AboutPage() {
               查看项目矩阵 →
             </Link>
           </div>
-          <div className="glass-card space-y-3 p-5 sm:p-6">
+          <div
+            className="neon-panel space-y-3 p-5 sm:p-6"
+            style={{ "--panel-color": matrixEngines[1].color } as CSSProperties}
+          >
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-cyan-300/80">
               内容来源
             </p>
@@ -193,7 +210,10 @@ export function AboutPage() {
               查看内容矩阵 →
             </Link>
           </div>
-          <div className="glass-card space-y-3 p-5 sm:p-6">
+          <div
+            className="neon-panel space-y-3 p-5 sm:p-6"
+            style={{ "--panel-color": matrixEngines[0].color } as CSSProperties}
+          >
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-cyan-300/80">
               合作方式
             </p>

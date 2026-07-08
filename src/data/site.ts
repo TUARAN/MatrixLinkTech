@@ -56,6 +56,96 @@ export const projects: Project[] = [
   }
 ];
 
+export type MatrixEngine = {
+  code: string;
+  title: string;
+  subtitle: string;
+  label: string;
+  description: string;
+  signals: string[];
+  color: string;
+};
+
+export const matrixEngines: MatrixEngine[] = [
+  {
+    code: "01",
+    title: "ToB",
+    subtitle: "博主联盟",
+    label: "Creator Growth Platform",
+    description: "连接技术创作者、开发者社区与科技品牌，把内容合作变成可持续的增长平台。",
+    signals: ["创作者连接", "品牌合作", "内容分发"],
+    color: "#2f8cff"
+  },
+  {
+    code: "02",
+    title: "ToC",
+    subtitle: "个人网站 + 前端周刊",
+    label: "Personal Influence",
+    description: "用个人品牌内容、前端周刊和长期写作沉淀影响力入口。",
+    signals: ["个人站点", "周刊订阅", "技术内容"],
+    color: "#ff8a4c"
+  },
+  {
+    code: "03",
+    title: "ToX",
+    subtitle: "社交网络 + 全球连接",
+    label: "Global Network",
+    description: "面向更广泛的技术圈层建立关系网络，让内容、项目和合作获得全球视野。",
+    signals: ["社交增长", "全球视野", "关系网络"],
+    color: "#9b5cff"
+  },
+  {
+    code: "04",
+    title: "ToG",
+    subtitle: "GitHub Projects",
+    label: "Open Source Assets",
+    description: "用开源项目和代码资产承载可信度，连接开发者生态和长期协作。",
+    signals: ["开源共享", "代码价值", "开发者生态"],
+    color: "#44df9a"
+  },
+  {
+    code: "05",
+    title: "ToP",
+    subtitle: "出版社资源",
+    label: "Publishing Network",
+    description: "把知识 IP、出版连接和作者成长纳入内容资产的长期建设。",
+    signals: ["知识 IP", "出版连接", "作者成长"],
+    color: "#ffc247"
+  },
+  {
+    code: "06",
+    title: "ToS",
+    subtitle: "数字员工 + 上班",
+    label: "Enterprise AI",
+    description: "围绕真实工作流建设 AI 数字员工、自动化流程和企业智能化能力。",
+    signals: ["AI 智能体", "自动化流程", "企业智能化"],
+    color: "#23d9f1"
+  }
+];
+
+export const matrixPrinciples = [
+  {
+    icon: "connect",
+    title: "连接",
+    description: "连接人、内容与机会"
+  },
+  {
+    icon: "growth",
+    title: "增长",
+    description: "多引擎驱动持续增长"
+  },
+  {
+    icon: "global",
+    title: "全球",
+    description: "面向全球开发者与用户"
+  },
+  {
+    icon: "value",
+    title: "长期价值",
+    description: "构建可复利的品牌资产"
+  }
+];
+
 export type UpdateCadence = "daily" | "weekly" | "ongoing";
 
 export type UpdateItem = {
