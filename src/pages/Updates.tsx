@@ -22,7 +22,7 @@ export function UpdatesPage() {
   return (
     <main className="flex-1 bg-transparent">
       <section className="section">
-        <div className="container-main max-w-4xl space-y-4">
+        <div className="container-main space-y-4">
           <p className="badge-soft text-[11px]">动态 · 内容矩阵</p>
           <h1 className="text-3xl font-semibold text-slate-50 sm:text-4xl">
             内容更新优先回到真实来源

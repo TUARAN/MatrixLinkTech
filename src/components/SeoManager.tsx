@@ -1,58 +1,21 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 
 type SeoEntry = {
   title: string;
   description: string;
   keywords: string;
-  path: string;
 };
 
 const SITE_NAME = "广州矩联科技有限公司";
 const SITE_URL = "https://matrixlink.tech";
 const DEFAULT_IMAGE = `${SITE_URL}/favicon.svg`;
 
-const seoMap: Record<string, SeoEntry> = {
-  "/": {
-    title: "广州矩联科技有限公司 - 官网 | 矩联科技",
-    description:
-      "广州矩联科技有限公司官方网站，展示 MatrixLinkTech 的真实项目、内容来源、合作方式与企业信息。",
-    keywords:
-      "矩联科技,广州矩联科技,广州矩联科技有限公司,矩联科技官网,AI 开发者生态,开发者网络,创作者网络",
-    path: "/"
-  },
-  "/about": {
-    title: "关于我们 - 广州矩联科技有限公司 | 矩联科技",
-    description:
-      "了解广州矩联科技有限公司的公司信息、联系方式、真实项目原则与内容沉淀方式。",
-    keywords:
-      "广州矩联科技有限公司,矩联科技,关于矩联科技,广州矩联科技,AI 开发者生态",
-    path: "/about"
-  },
-  "/projects": {
-    title: "项目 - 广州矩联科技有限公司 | 矩联科技",
-    description:
-      "查看广州矩联科技有限公司的真实项目入口，包括博主联盟、前端周刊与 AI 工作流孵化方向。",
-    keywords:
-      "矩联科技项目,广州矩联科技项目矩阵,博主联盟,前端周刊,AI 工具矩阵",
-    path: "/projects"
-  },
-  "/updates": {
-    title: "动态 - 广州矩联科技有限公司 | 矩联科技",
-    description:
-      "广州矩联科技有限公司动态索引，引导到 2aran.com、前端周刊与博主联盟等真实内容来源。",
-    keywords:
-      "矩联科技动态,广州矩联科技,2aran,前端周刊,博主联盟",
-    path: "/updates"
-  },
-  "/cooperation": {
-    title: "合作 - 广州矩联科技有限公司 | 矩联科技",
-    description:
-      "联系广州矩联科技有限公司，围绕技术内容、创作者网络、开发者触达与 AI 工作流进行合作。",
-    keywords:
-      "矩联科技合作,广州矩联科技合作,技术内容合作,创作者合作,AI 工作流",
-    path: "/cooperation"
-  }
+const seoConfig: SeoEntry = {
+  title: "广州矩联科技有限公司 - 官网 | 矩联科技",
+  description:
+    "广州矩联科技有限公司单页官网，集中展示 MatrixLinkTech 的内容产品矩阵、真实项目、内容来源、合作方式与企业信息。",
+  keywords:
+    "矩联科技,广州矩联科技,广州矩联科技有限公司,矩联科技官网,AI 开发者生态,开发者网络,创作者网络,内容产品矩阵"
 };
 
 const organizationSchema = {
@@ -119,21 +82,18 @@ function upsertJsonLd(id: string, schema: object) {
 }
 
 export function SeoManager() {
-  const location = useLocation();
-
   useEffect(() => {
-    const config = seoMap[location.pathname] ?? seoMap["/"];
-    const canonicalUrl = new URL(config.path, SITE_URL).toString();
+    const canonicalUrl = new URL("/", SITE_URL).toString();
 
-    document.title = config.title;
+    document.title = seoConfig.title;
 
     upsertMeta('meta[name="description"]', {
       name: "description",
-      content: config.description
+      content: seoConfig.description
     });
     upsertMeta('meta[name="keywords"]', {
       name: "keywords",
-      content: config.keywords
+      content: seoConfig.keywords
     });
     upsertMeta('meta[name="robots"]', {
       name: "robots",
@@ -153,11 +113,11 @@ export function SeoManager() {
     });
     upsertMeta('meta[property="og:title"]', {
       property: "og:title",
-      content: config.title
+      content: seoConfig.title
     });
     upsertMeta('meta[property="og:description"]', {
       property: "og:description",
-      content: config.description
+      content: seoConfig.description
     });
     upsertMeta('meta[property="og:url"]', {
       property: "og:url",
@@ -173,11 +133,11 @@ export function SeoManager() {
     });
     upsertMeta('meta[name="twitter:title"]', {
       name: "twitter:title",
-      content: config.title
+      content: seoConfig.title
     });
     upsertMeta('meta[name="twitter:description"]', {
       name: "twitter:description",
-      content: config.description
+      content: seoConfig.description
     });
     upsertMeta('meta[name="twitter:image"]', {
       name: "twitter:image",
@@ -190,7 +150,7 @@ export function SeoManager() {
     });
 
     upsertJsonLd("organization-jsonld", organizationSchema);
-  }, [location.pathname]);
+  }, []);
 
   return null;
 }

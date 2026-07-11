@@ -12,6 +12,9 @@
 
 :root {
   color-scheme: dark;
+  scroll-behavior: smooth;
+  /* One horizontal rhythm for navigation, every page section, and the footer. */
+  --site-content-width: 90rem;
 }
 
 body {
@@ -176,13 +179,15 @@ body {
   @apply relative py-16 sm:py-20 border-t border-slate-800/70;
 }
 
-.container-main {
-  @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+.anchor-section {
+  scroll-margin-top: 5rem;
 }
 
+.site-container,
+.container-main,
 .container-matrix {
   @apply mx-auto w-full px-4 sm:px-6 lg:px-8;
-  max-width: 96rem;
+  max-width: var(--site-content-width);
 }
 
 .nav-link {

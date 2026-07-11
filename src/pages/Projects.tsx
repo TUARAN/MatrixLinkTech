@@ -97,7 +97,7 @@ export function ProjectsPage() {
   return (
     <main className="flex-1 bg-transparent">
       <section className="section">
-        <div className="container-main max-w-4xl space-y-4">
+        <div className="container-main space-y-4">
           <p className="badge-soft text-[11px]">项目 · 真实进度</p>
           <h1 className="text-3xl font-semibold text-slate-50 sm:text-4xl">
             项目进入六大增长引擎
